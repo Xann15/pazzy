@@ -48,6 +48,32 @@ body {
   --dark-message-card-color: #292929;
 }
 
+/* WELCOME SCREEN */
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Bakcground */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease-out;
+}
+
+#welcome-logo {
+  width: 150px; /* Logo Size */
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* NProgress background */
 #nprogress .bar {
   background: var(--primary-color) !important;

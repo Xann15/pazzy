@@ -17,7 +17,34 @@
     window.chatify.audioContext = new(window.AudioContext || window.webkitAudioContext)();
     window.chatify.notificationSound = new Audio(chatify.sounds.notification);
 
-    
+    document.addEventListener("DOMContentLoaded", function() {
+        var welcomeScreen = document.getElementById("welcome-screen");
+        var welcomeSound = new Audio("/sounds/chatify/welcome-sound.mp3");
+
+        // Cek apakah welcome screen sudah muncul sebelumnya di localStorage
+        if (localStorage.getItem("welcomeShown")) {
+            welcomeScreen.style.display = "none"; // Langsung sembunyikan jika sudah pernah muncul
+        } else {
+            // Event untuk menutup welcome screen saat ditekan
+            function hideWelcomeScreen() {
+                welcomeScreen.classList.add("hidden");
+
+                // Pastikan hanya memutar sound jika welcome screen pertama kali muncul
+                if (!localStorage.getItem("welcomeShown")) {
+                    welcomeSound.play().catch(error => console.warn("Autoplay failed:", error));
+                    localStorage.setItem("welcomeShown", "true"); // Simpan status di localStorage
+                }
+
+                // Hapus welcome screen setelah animasi selesai
+                setTimeout(() => {
+                    welcomeScreen.style.display = "none";
+                    document.removeEventListener("click", hideWelcomeScreen);
+                }, 1000);
+            }
+
+            document.addEventListener("click", hideWelcomeScreen);
+        }
+    });
 </script>
 <script src="{{ asset('js/chatify/utils.js') }}"></script>
 <script src="{{ asset('js/chatify/code.js') }}"></script>

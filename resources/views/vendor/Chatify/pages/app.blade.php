@@ -1,5 +1,10 @@
 @include('Chatify::layouts.headLinks')
 
+<!-- Welcome Screen -->
+<div id="welcome-screen">
+    <img id="welcome-logo" src="/images/icons/icon-128x128.png" alt="Welcome Logo">
+</div>
+
 <audio id="chatifyNotificationSound" preload="auto" muted></audio>
 
 <div class="messenger">
@@ -31,7 +36,7 @@
                 {{-- Stories --}}
                 {{-- <div class="chatify-stories">
                     <div class="story-container">
-                        @foreach($stories as $story)
+                        @foreach ($stories as $story)
                             <x-story :story="$story" />
                         @endforeach
                         @include('components.story-upload')
