@@ -2,7 +2,10 @@
 
 <!-- Welcome Screen -->
 <div id="welcome-screen">
-    <img id="welcome-logo" src="/images/icons/icon-128x128.png" alt="Welcome Logo">
+    <div class="welcome-content">
+        <img id="welcome-logo" src="/images/icons/icon-128x128.png" alt="Welcome Logo">
+        <h2 id="welcome-text">Welcome to Pazzy</h2>
+    </div>
 </div>
 
 <audio id="chatifyNotificationSound" preload="auto" muted></audio>
