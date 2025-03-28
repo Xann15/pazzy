@@ -903,14 +903,13 @@
                     <a href="{{ url('/chatify') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Chatify</a>
                 @else
-                    <a href="{{ route('login') }}"
+                    <a href="{{ route('auth.login') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
                         in</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
+                        <a href="{{ route('auth.register') }}"
                             class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
+                
                 @endauth
             </div>
         @endif

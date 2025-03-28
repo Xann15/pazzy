@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\vendor\Chatify;
+namespace App\Http\Controllers\vendor\Chatify\Api;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
